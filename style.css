@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+    height: 100vh;
+    width: 100vw;
+    background: #e1e3db;
+}
+
+body {
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
+
+.wrapper {
+    background-color: #eee;
+    padding-right: 50px;
+    height: 250px;
+    width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 .8rem 2.5rem #161917;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper.active {
+    height: 300px;
+}
+
+.wrapper.active .header h1 {
+    font-size: 2.5rem;
+}
+
+.header-form {
+    padding-left: 50px;
+    margin-right: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper .header h1 {
+    font-size: 3rem;
+    text-align: center;
+}
+
+.wrapper .header p {
+    font-size: 1.6rem;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.wrapper .form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrapper .form input {
+    background-color: transparent;
+    width: 100%;
+    outline: none;
+    height: 40px;
+    margin-bottom: 2rem;
+    border: none;
+    border-bottom: .1rem solid black;
+}
+
+.wrapper .form input::placeholder {
+    padding-left: .5rem;
+    color: black;
+}
+
+.wrapper .form button {
+    width: 100%;
+    height: 40px;
+    background-color: #b9030f;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    color: #eee;
+    cursor: pointer;
+}
+
+.wrapper .form button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.wrapper .form button:hover {
+    border: .1rem solid #b9030f;
+    color: black;
+    background-color: transparent;
+    font-weight: bolder;
+}
+
+.wrapper .qr-code {
+    display: none;
+    padding: 10px;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 10px;
+    border-radius: 5px;
+    pointer-events: none;
+    border: 1px solid #ccc;
+}
+
+.wrapper .qr-code img {
+    width: 170px;
+}
+
+.wrapper.active .qr-code {
+    display: block;
+    transition: all .5s .5s ease;
+}
+
+.wrapper .qr-code {
+    display: none;
+    padding: 10px;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 10px;
+    border-radius: 5px;
+    pointer-events: none;
+    border: 1px solid #ccc;
+    position: relative;
+}
+
+.wrapper .qr-code::before {
+    content: '';
+    background: linear-gradient( rgba(255,255,255,.7) 0%,rgba(255,255,255,.7) 100%), url('/logo.png') center/contain no-repeat;
+    /* Substitua 'seu-icone.png' pelo caminho do seu ícone */
+    background-size: 50% 50%;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1; /* Certifique-se de que a marca d'água esteja acima do QR code */
+    opacity: 1.0; /* Ajuste a opacidade conforme necessário */
+}
+
+.wrapper .qr-code img {
+    width: 170px;
+}
+
+.wrapper.active .qr-code {
+    display: block;
+    transition: all .5s .5s ease;
+}
+
+#invisibleDiv{
+    display: none;
+}
